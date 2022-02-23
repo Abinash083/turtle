@@ -1,7 +1,7 @@
 from snake import Snake
 import time
 from turtle import Screen
-import random
+from food import Food
 
 screen = Screen()
 screen.setup(width=600, height=600)
@@ -9,7 +9,8 @@ screen.title("SnakeGame")
 screen.tracer(0)
 game_running = True
 
-snake1= Snake()
+snake1 = Snake()
+food1 = Food()
 
 screen.listen()
 screen.onkey(snake1.up, "Up")
@@ -21,5 +22,7 @@ while game_running:
     screen.update()
     time.sleep(0.08)
     snake1.move()
+    if snake1.head.distance(food1) <= 16:
+        food1.go_to_random_pos()
 
 screen.exitonclick()

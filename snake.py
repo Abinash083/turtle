@@ -1,4 +1,4 @@
-from turtle import Turtle, Screen
+from turtle import Turtle
 
 start_position = [(0, 0), (-20, 0), (-40, 0)]
 distance = 20
