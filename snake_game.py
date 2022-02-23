@@ -30,13 +30,13 @@ while game_running:
         snake1.increase_snake()
 
     # death by wall touching
-    if snake1.head.xcor() > 290 or snake1.head.xcor() < -290 or snake1.head.ycor() > 290 or snake1.head.ycor() < -290:
+    if snake1.head.xcor() > 325 or snake1.head.xcor() < -325 or snake1.head.ycor() > 325 or snake1.head.ycor() < -325:
         game_running = False
         board.gameover()
 
     # death by hitting body part
     for part in snake1.parts[1:]:
-        if snake1.head.distance(part) <= 10:
+        if snake1.head.distance(part) <= 15:
             game_running = False
             board.gameover()
 
