@@ -14,6 +14,8 @@ class Snake:
         self.create_snake()
         self.head = self.parts[0]
         self.head.color("red")
+        #self.wall_side_balance_factor = 20
+        #self.wall_upanddown_balance_factor = 1
 
     def create_snake(self):
         for pos in start_position:
@@ -29,7 +31,7 @@ class Snake:
             y_cor = self.parts[pa - 1].ycor()
             self.parts[pa].goto(x_cor, y_cor)
         self.head.forward(distance)
-        self.jump_wall()
+        #self.jump_wall()
 
     def up(self):
         if self.head.heading() != down:
@@ -47,18 +49,24 @@ class Snake:
         if self.head.heading() != left:
             self.head.setheading(right)
 
-    def jump_wall(self):
-        if self.head.xcor() > 280 or self.head.xcor() < -280:
-            new_x = -self.head.xcor()
-            new_y = self.head.ycor()
-        elif self.head.ycor() > 280 or self.head.ycor() < -280:
-            new_y = -self.head.ycor()
-            new_x = self.head.xcor()
-        else:
-            new_x = self.head.xcor()
-            new_y = self.head.ycor()
-
-        self.head.goto(new_x, new_y)
-
-
+    #def jump_wall(self):
+    #    if self.head.xcor() == 300 or self.head.xcor() == -300:
+    #        if self.head.heading() == left or self.head.heading() == right:
+    #            new_x = -self.head.xcor()
+    #            new_y = self.head.ycor()
+    #        else:
+    #            new_x = self.head.xcor()
+    #            new_y = self.head.ycor()
+    #    elif self.head.ycor() == 300 or self.head.ycor() == -300:
+    #        if self.head.heading() == up or self.head.heading() == down:
+    #            new_y = -self.head.ycor()
+    #            new_x = self.head.xcor()
+    #        else:
+    #            new_x = self.head.xcor()
+    #            new_y = self.head.ycor()
+    #    else:
+    #        new_x = self.head.xcor()
+    #        new_y = self.head.ycor()
+    #
+    #    self.head.goto(new_x, new_y)
 

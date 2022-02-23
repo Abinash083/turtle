@@ -22,7 +22,7 @@ screen.onkey(snake1.right, "Right")
 
 while game_running:
     screen.update()
-    time.sleep(1)
+    time.sleep(0.08)
     snake1.move()
     if snake1.head.distance(food1) <= 16:
         food1.go_to_random_pos()
