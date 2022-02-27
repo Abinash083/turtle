@@ -5,10 +5,11 @@ m_distance = 20
 
 class Paddle(Turtle):
 
-    def __init__(self, x_pos):
+    def __init__(self, color, x_pos):
         super().__init__()
         self.penup()
         self.shape("square")
+        self.color(color)
         self.x_pos = x_pos
         self.y_pos = 0
         self.shapesize(5, 1)
@@ -27,5 +28,3 @@ class Paddle(Turtle):
 
     def move(self):
         self.goto(self.x_pos, self.y_pos)
-
-
