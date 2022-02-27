@@ -24,7 +24,6 @@ if need_extra_snake:
 else:
     start_position_1 = [(0, 0), (-20, 0), (-40, 0)]
 
-
 snake1 = Snake(1, start_position_1)
 
 if need_extra_snake:
@@ -53,8 +52,6 @@ screen.onkey(snake1.left, "a")
 screen.onkey(snake1.right, "d")
 
 
-
-
 def food_eating(snake, food, board):
     if snake.head.distance(food) <= 16:
         food.go_to_random_pos()
@@ -62,7 +59,7 @@ def food_eating(snake, food, board):
         snake.increase_snake()
 
 
-def game_over_condition(snake, board ):
+def game_over_condition(snake, board):
     global game_running
     # death by wall touching
     if need_extra_snake:
