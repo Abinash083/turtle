@@ -12,13 +12,13 @@ class CarManager:
         self.STARTING_MOVE_DISTANCE = 5
 
     def create_cars(self):
-        num = random.randint(0, 6)
+        num = random.randint(0, 4)
         if num == 1:
             car = Turtle()
             car.penup()
             car.shape("square")
             car.shapesize(1, 2)
-            car.goto(280, random.randint(-280, 280))
+            car.goto(280, random.randint(-250, 250))
             car.setheading(180)
             car.color(random.choice(COLORS))
             self.cars.append(car)
